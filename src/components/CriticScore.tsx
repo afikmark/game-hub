@@ -1,5 +1,4 @@
 import { Badge } from "@chakra-ui/react";
-import { useState } from "react";
 
 interface Props {
   score: number;
