@@ -17,7 +17,6 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
     { id: 0, name: "Platforms", slug: "5sdas141asfdfkqeq141" },
     ...data,
   ];
-  console.log(modifiedData);
 
   return (
     <Menu>
