@@ -15,6 +15,12 @@ export interface GameQuery {
 function App() {
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
+  const handlePlatformSelect = (platform: Platform | null) => {
+    if (platform && platform.name === "Platforms")
+      setGameQuery({ ...gameQuery, platform: null });
+    else setGameQuery({ ...gameQuery, platform });
+  };
+
   return (
     <Grid
       templateAreas={{
@@ -39,9 +45,7 @@ function App() {
       </Show>
       <GridItem area="main">
         <PlatformSelector
-          onSelectPlatform={(platform: Platform | null) =>
-            setGameQuery({ ...gameQuery, platform })
-          }
+          onSelectPlatform={handlePlatformSelect}
           selectedPlatform={gameQuery.platform}
         ></PlatformSelector>
         <GameGrid gameQuery={gameQuery}></GameGrid>

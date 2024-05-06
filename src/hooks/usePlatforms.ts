@@ -8,6 +8,6 @@ export interface Platform {
 }
 
 
-const usePlatforms = () =>  useData<Platform>("/parent_platforms/lists/parents");
+const usePlatforms = () =>  useData<Platform>("/platforms/lists/parents");
 
 export default usePlatforms;

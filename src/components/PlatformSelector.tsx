@@ -13,13 +13,19 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatform }: Props) => {
 
   if (error) return null;
 
+  const modifiedData = [
+    { id: 0, name: "Platforms", slug: "5sdas141asfdfkqeq141" },
+    ...data,
+  ];
+  console.log(modifiedData);
+
   return (
     <Menu>
       <MenuButton as={Button} rightIcon={<BsChevronDown />}>
         {selectedPlatform?.name || "Platforms"}
       </MenuButton>
       <MenuList>
-        {data.map((platform) => (
+        {modifiedData.map((platform) => (
           <MenuItem
             onClick={() => onSelectPlatform(platform)}
             key={platform.id}
